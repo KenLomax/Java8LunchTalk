@@ -34,6 +34,12 @@ public class Java7UglyImperativeCode {
 		// Check the answer
 		assertEquals(myModifiedData, Arrays.asList("I", "LOVE", "ICKE"));
 	}
+	
+	
+	
+	
+	
+	
 
 	@Test
 	public void filteringData() {
@@ -57,6 +63,34 @@ public class Java7UglyImperativeCode {
 		 * iteration
 		 */
 	}
+	
+	
+	
+	
+	
+	@Test
+	public void toLowerCaseAndThenFilter() {
+		// Get the Data
+		List<String> myData = Arrays.asList("Angela", "Merkel", "Is","Sexy");
+		
+		// Do something with the Data
+		List<String> myModifiedData = new ArrayList<>();	// Even in this trivial case we have messy code..
+		for (int i = 0; i< myData.size(); i++){  			// Explicit iteration
+			String s = myData.get(i);			 			// Mutable Data
+			s = s.toLowerCase(); 							// Our business logic is hidden here amongst the noise	
+			if (s.contains("e"))							// Unclear, spaghetti
+				myModifiedData.add( s );  					// Mutable Data
+		}
+		
+		// Check the answer
+		assertEquals(myModifiedData, Arrays.asList("angela","merkel","sexy"));
+	}
+	
+	
+	
+	
+	
+	
 
 	@Test
 	public void sortingData() {
@@ -74,6 +108,14 @@ public class Java7UglyImperativeCode {
 		// Check the answer
 		assertEquals(myData, Arrays.asList("piggy", "lilits", "beautiful"));
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Test
 	public void aggregatingDataCheckAllAreOdd() {
@@ -92,6 +134,14 @@ public class Java7UglyImperativeCode {
 		// Check the answer
 		assertFalse(allOdd);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@Test
 	public void aggregatingDataIntoEvenAndOdd() {
@@ -113,9 +163,16 @@ public class Java7UglyImperativeCode {
 		assertEquals(evenData, Arrays.asList(12));
 	}
 	
+	
+	
+	
+	
+	
+	
+	
 
 	@Test 
-	public void appendingACollection(){
+	public void summingACollection(){
 		// Get the Data
 		List<Integer> myData = Arrays.asList(1, 3, 5, 7, 9, 12);
 		
